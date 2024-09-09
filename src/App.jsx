@@ -142,6 +142,16 @@ const days = [
           "Walk through Tuileries Garden or take Metro Line 1, 8, or 12 to Concorde station.",
       },
       {
+        name: "Musée d'Orsay",
+        position: { lat: 48.86, lng: 2.3266 },
+        duration: "2-3 hours",
+        price: "€16 for adults",
+        facts:
+          "Houses the largest collection of impressionist and post-impressionist masterpieces in the world.",
+        transport:
+          "Take RER C to Musée d'Orsay station or Metro Line 12 to Solférino station.",
+      },
+      {
         name: "Sainte-Chapelle",
         position: { lat: 48.8554, lng: 2.3451 },
         duration: "1 hour",
@@ -182,6 +192,16 @@ const days = [
     name: "September 15: Notre-Dame & Left Bank",
     locations: [
       {
+        name: "Le Marais",
+        position: { lat: 48.8597, lng: 2.3622 },
+        duration: "2-3 hours",
+        price: "Free (unless shopping or dining)",
+        facts:
+          "A historic district known for its beautiful architecture, trendy boutiques, and vibrant Jewish and LGBTQ+ communities.",
+        transport:
+          "Take Metro Line 1 to Saint-Paul station or Line 8 to Chemin Vert station.",
+      },
+      {
         name: "Notre-Dame Cathedral (exterior)",
         position: { lat: 48.853, lng: 2.3499 },
         duration: "30 minutes",
@@ -190,15 +210,6 @@ const days = [
           "Currently under restoration after the 2019 fire, but the exterior is still impressive.",
         transport:
           "Take RER B or C to Saint-Michel Notre-Dame station, or Metro Line 4 to Cité station.",
-      },
-      {
-        name: "Saint-Germain-des-Prés",
-        position: { lat: 48.8542, lng: 2.3332 },
-        duration: "2-3 hours",
-        price: "Free",
-        facts:
-          "Historic neighborhood known for its cafes, art galleries, and intellectual history.",
-        transport: "Take Metro Line 4 to Saint-Germain-des-Prés station.",
       },
       {
         name: "Panthéon",
@@ -211,21 +222,30 @@ const days = [
           "Take RER B to Luxembourg station or bus 21, 27, 38, 82, 84, 85, or 89.",
       },
       {
-        name: "Luxembourg Gardens",
-        position: { lat: 48.8462, lng: 2.3371 },
-        duration: "1-2 hours",
+        name: "Saint-Germain-des-Prés",
+        position: { lat: 48.8542, lng: 2.3332 },
+        duration: "2-3 hours",
         price: "Free",
         facts:
-          "Second largest public park in Paris, home to the French Senate.",
-        transport:
-          "Walk from the Panthéon or take RER B to Luxembourg station.",
+          "Historic neighborhood known for its cafes, art galleries, and intellectual history.",
+        transport: "Take Metro Line 4 to Saint-Germain-des-Prés station.",
       },
     ],
-    tips: "Enjoy a relaxed day in the Left Bank. Consider having lunch at a classic Parisian café in Saint-Germain-des-Prés. The Luxembourg Gardens are perfect for a picnic if weather permits.",
+    tips: "Book tickets for Musée d'Orsay in advance to avoid queues. Enjoy a coffee at one of the historic cafes in Saint-Germain-des-Prés like Café de Flore or Les Deux Magots.",
   },
   {
     name: "September 16: Relaxation & Hidden Gems",
     locations: [
+      {
+        name: "Luxembourg Gardens",
+        position: { lat: 48.8462, lng: 2.3371 },
+        duration: "2-3 hours",
+        price: "Free",
+        facts:
+          "Second largest public park in Paris, home to the French Senate.",
+        transport:
+          "Take RER B to Luxembourg station or Metro Line 4 to Odéon station.",
+      },
       {
         name: "Canal Saint-Martin",
         position: { lat: 48.8731, lng: 2.3654 },
@@ -236,38 +256,8 @@ const days = [
         transport:
           "Take Metro Line 5 to République or Jacques Bonsergent station.",
       },
-      {
-        name: "Parc des Buttes-Chaumont",
-        position: { lat: 48.8809, lng: 2.3825 },
-        duration: "2-3 hours",
-        price: "Free",
-        facts:
-          "One of the largest and most original parks in Paris, featuring a lake, waterfalls, and great views of the city.",
-        transport:
-          "Take Metro Line 7bis to Buttes Chaumont station or Line 5 to Laumière station.",
-      },
-      {
-        name: "Le Marais",
-        position: { lat: 48.8597, lng: 2.3622 },
-        duration: "2-3 hours",
-        price: "Free (unless shopping or dining)",
-        facts:
-          "A historic district known for its beautiful architecture, trendy boutiques, and vibrant Jewish and LGBTQ+ communities.",
-        transport:
-          "Take Metro Line 1 to Saint-Paul station or Line 8 to Chemin Vert station.",
-      },
-      {
-        name: "Seine River Cruise",
-        position: { lat: 48.8589, lng: 2.347 },
-        duration: "1 hour",
-        price: "€15-€20 for adults",
-        facts:
-          "A relaxing way to see many Paris landmarks from the water, especially beautiful at sunset.",
-        transport:
-          "Most cruises depart near Pont Neuf. Take Metro Line 7 to Pont Neuf station or Line 4 to Cité station.",
-      },
     ],
-    tips: "Take it easy on your last day. Enjoy a leisurely breakfast at a local café, people-watch from a park bench, and soak in the Parisian atmosphere. Consider doing any last-minute shopping in Le Marais. End your trip with a relaxing Seine River cruise to bid farewell to the City of Light.",
+    tips: "Start your day with a relaxing morning in Luxembourg Gardens. Consider having a picnic lunch by Canal Saint-Martin. End your trip with a sunset Seine River cruise for a memorable farewell to Paris.",
   },
 ];
 
