@@ -372,6 +372,17 @@ const ParisItineraryMap = () => {
   };
 
   const timelineLocations = generateTimeline(days[selectedDay].locations);
+  const colors = {
+    beige: "#F5E6D3",
+    darkBrown: "#8B4513",
+    terracotta: "#E07A5F",
+    sage: "#e89c30",
+  };
+
+  const openInGoogleMaps = (location) => {
+    const url = `https://www.google.com/maps/search/?api=1&query=${location.position.lat},${location.position.lng}`;
+    window.open(url, "_blank");
+  };
 
   return (
     <div
@@ -380,8 +391,7 @@ const ParisItineraryMap = () => {
         display: "flex",
         flexDirection: "column",
         fontFamily: "Arial, sans-serif",
-        backgroundColor: "#f0f4f8",
-        backgroundImage: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)",
+        backgroundColor: colors.beige,
       }}
     >
       <div
@@ -389,7 +399,7 @@ const ParisItineraryMap = () => {
           display: "flex",
           overflowX: "auto",
           padding: "16px",
-          backgroundColor: "#3490dc",
+          backgroundColor: colors.darkBrown,
           boxShadow: "0 2px 4px rgba(0,0,0,0.1)",
         }}
       >
@@ -404,8 +414,8 @@ const ParisItineraryMap = () => {
               borderRadius: "4px",
               cursor: "pointer",
               backgroundColor:
-                selectedDay === index ? "#ffffff" : "transparent",
-              color: selectedDay === index ? "#3490dc" : "white",
+                selectedDay === index ? colors.beige : "transparent",
+              color: selectedDay === index ? colors.darkBrown : colors.beige,
               transition: "all 0.3s ease",
               whiteSpace: "nowrap",
               fontWeight: "bold",
@@ -426,16 +436,20 @@ const ParisItineraryMap = () => {
             <MarkerF
               key={index}
               position={location.position}
-              label={(index + 1).toString()}
+              label={{
+                text: (index + 1).toString(),
+                color: colors.beige,
+                fontWeight: "bold",
+              }}
               onClick={() => setSelectedLocation(location)}
             />
           ))}
           <PolylineF
             path={timelineLocations.map((location) => location.position)}
             options={{
-              strokeColor: "#FF0000",
+              strokeColor: colors.terracotta,
               strokeOpacity: 0.8,
-              strokeWeight: 2,
+              strokeWeight: 3,
             }}
           />
           {selectedLocation && (
@@ -443,11 +457,25 @@ const ParisItineraryMap = () => {
               position={selectedLocation.position}
               onCloseClick={() => setSelectedLocation(null)}
             >
-              <div>
+              <div style={{ color: colors.darkBrown }}>
                 <h3>{selectedLocation.name}</h3>
                 <p>
                   {selectedLocation.startTime} - {selectedLocation.endTime}
                 </p>
+                <button
+                  onClick={() => openInGoogleMaps(selectedLocation)}
+                  style={{
+                    backgroundColor: colors.terracotta,
+                    color: colors.beige,
+                    border: "none",
+                    padding: "5px 10px",
+                    borderRadius: "4px",
+                    cursor: "pointer",
+                    marginTop: "5px",
+                  }}
+                >
+                  Open in Google Maps
+                </button>
               </div>
             </InfoWindowF>
           )}
@@ -457,7 +485,7 @@ const ParisItineraryMap = () => {
         style={{
           padding: "16px",
           overflowY: "auto",
-          backgroundColor: "rgba(255, 255, 255, 0.8)",
+          backgroundColor: colors.beige,
           boxShadow: "0 -2px 4px rgba(0,0,0,0.1)",
           flex: 1,
         }}
@@ -467,7 +495,7 @@ const ParisItineraryMap = () => {
             fontSize: "1.25rem",
             fontWeight: "bold",
             marginBottom: "16px",
-            color: "#2c3e50",
+            color: colors.darkBrown,
           }}
         >
           {days[selectedDay].name}
@@ -481,14 +509,14 @@ const ParisItineraryMap = () => {
                 padding: "12px",
                 backgroundColor:
                   index === 0 || index === timelineLocations.length - 1
-                    ? "#e6f7ff"
-                    : "#ffffff",
+                    ? colors.sage
+                    : "#FFFFFF",
                 borderRadius: "8px",
                 boxShadow: "0 2px 4px rgba(0,0,0,0.05)",
                 fontSize: "0.9rem",
                 borderLeft:
                   index === 0 || index === timelineLocations.length - 1
-                    ? "4px solid #3490dc"
+                    ? `4px solid ${colors.terracotta}`
                     : "none",
               }}
             >
@@ -496,8 +524,11 @@ const ParisItineraryMap = () => {
                 style={{
                   fontSize: "1rem",
                   marginBottom: "4px",
-                  color: "#3490dc",
+                  color: colors.darkBrown,
+                  cursor: "pointer",
+                  textDecoration: "underline",
                 }}
+                onClick={() => openInGoogleMaps(location)}
               >
                 {index + 1}. {location.name}
               </h3>
@@ -525,16 +556,16 @@ const ParisItineraryMap = () => {
           style={{
             marginTop: "16px",
             padding: "12px",
-            backgroundColor: "#e6f7ff",
+            backgroundColor: colors.sage,
             borderRadius: "8px",
-            borderLeft: "4px solid #3490dc",
+            borderLeft: `4px solid ${colors.terracotta}`,
             fontSize: "0.9rem",
           }}
         >
-          <h4 style={{ marginBottom: "8px", color: "#2c3e50" }}>
+          <h4 style={{ marginBottom: "8px", color: colors.darkBrown }}>
             Tips for the day:
           </h4>
-          <p>{days[selectedDay].tips}</p>
+          <p style={{ color: colors.darkBrown }}>{days[selectedDay].tips}</p>
         </div>
       </div>
     </div>
